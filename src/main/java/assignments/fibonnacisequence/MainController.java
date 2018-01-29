@@ -18,7 +18,16 @@ public class MainController {
         int[] feb = new int[num];
         feb[0] = 0;
         feb[1] = 1;
+        feb[2] = 1;
+        feb[3] = 2;
 
+
+        for(int i=4; i < num; i++) {
+            feb[i] = feb[i - 1] + feb[i - 2]+feb[i - 3]+feb[i - 4];
+            sequence += feb[i] + "  ";
+        }
+      
+/*
         for(int i=2; i < num; i++){
             feb[i] = feb[i-1] + feb[i-2];
             sequence+=feb[i]+"  ";
@@ -31,7 +40,7 @@ public class MainController {
                 sequence+=sumSequence+" ";
             }
         }
-
+*/
         return sequence;
 
     }
