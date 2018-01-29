@@ -26,9 +26,10 @@ public class MainController {
                     sum+= feb[j];
                 }
                 sumSequence += sum+" ";
+                sequence+=sumSequence;
             }
         }
-        sequence+="<br/>"+sumSequence;
+        //sequence+="<br/>"+sumSequence;
         return sequence;
 
     }
