@@ -11,8 +11,6 @@ public class MainController {
 
     public String fiboSequence(@RequestParam("number") int num) {
 
-        String sequence="";
-        String sumSequence="";
         int sum=0;
         int count=2;
         int[] feb = new int[num];
@@ -20,27 +18,15 @@ public class MainController {
         feb[1] = 1;
         feb[2] = 1;
         feb[3] = 2;
+        String sequence=feb[0]+" "+feb[1]+" "+feb[2]+" "+feb[3]+" ";
 
 
         for(int i=4; i < num; i++) {
             feb[i] = feb[i - 1] + feb[i - 2]+feb[i - 3]+feb[i - 4];
-            sequence += feb[i] + "  ";
+            sequence += feb[i] + " ";
         }
-      
-/*
-        for(int i=2; i < num; i++){
-            feb[i] = feb[i-1] + feb[i-2];
-            sequence+=feb[i]+"  ";
-            count++;
-            if(count%4==0) {
-                for (int j = i; j >=0; --j) {
-                    sum+= feb[j];
-                }
-                sumSequence += sum+" ";
-                sequence+=sumSequence+" ";
-            }
-        }
-*/
+
+
         return sequence;
 
     }
