@@ -14,6 +14,7 @@ public class MainController {
         String sequence="";
         String sumSequence="";
         int sum=0;
+        int count=2;
         int[] feb = new int[num];
         feb[0] = 0;
         feb[1] = 1;
@@ -21,7 +22,8 @@ public class MainController {
         for(int i=2; i < num; i++){
             feb[i] = feb[i-1] + feb[i-2];
             sequence+=feb[i]+"  ";
-            if(i%4==0) {
+            count++;
+            if(count%4==0) {
                 for (int j = i; j >=0; --j) {
                     sum+= feb[j];
                 }
